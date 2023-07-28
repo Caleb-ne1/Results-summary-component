@@ -1,0 +1,232 @@
+@font-face {
+    font-family: 'HankenGrotesk';
+    font-display: swap;
+    font-weight: 100 900;
+    src: url('assets/fonts/HankenGrotesk-VariableFont_wght.ttf') 
+         format('truetype');
+  }
+:root {
+    /*Primary*/
+--light-red: 0, 100%, 67%;
+--orange-yellow: 39, 100%, 56%;
+--green-teal: 166, 100%, 37%;
+--cobalt-blue: 234, 85%, 45%;
+
+    /* Gradients */
+--light-slate-blue: 252, 100%, 67%;
+--light-royal-blue: 241, 81%, 54%;
+--Violet-blue : 256, 72%, 46%;
+--Persian-blue: 241, 72%, 46%;
+
+
+--gradient-primary: linear-gradient(
+      hsl(var(--light-slate-blue)), 
+      hsl(var(--light-royal-blue)));
+--gradient-transparent: linear-gradient(hsl(256, 72%, 46%), hsl(241, 72%, 46%, 0));
+
+    /* Neutral */
+--white: 0, 0%, 100%;
+--Pale-blue: 221, 100%, 96%;
+--light-lavender: 241, 100%, 89%;
+--Dark-gray-blue: 224, 30%, 27%;
+
+--font-family: 'HankenGrotesk', sans-serif;
+
+--fw-regular: 500;
+--fw-bold: 700;
+--fw-black: 800;
+
+--fs-400: 1.125rem;
+--fs-500: 1.25rem;
+--fs-600: 1.5rem;
+--fs-700: 1.75rem;
+--fs-800: 2rem;
+--fs-900: 5rem;
+
+
+       
+}
+
+
+*, *::before, *::after {
+    margin: 0;
+    box-sizing: border-box;
+    font: inherit;
+}
+
+body {
+    padding-block-end: 2rem;
+    font-family: var(--font-family);
+    font-size: var(--fs-400);
+    color: hsl(var(--Dark-gray-blue));
+}
+
+img,svg {
+    display: block;
+    max-width: 100%;
+}
+
+.grid-flow {
+    display: grid;
+    align-content: start;
+    gap: 1rem;
+}
+
+.title {
+    font-weight: var(--fw-bold);
+}
+
+.result_summary {
+    max-width: 40rem;
+    display: grid;
+}
+.summary-results {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 600px) {
+    body {
+        min-height: 90vh;
+        display: grid;
+        place-items: center;
+    }
+    .result_summary {
+        margin-top: 100px;
+        margin-inline: 1rem;
+        grid-template-columns: 1fr 1fr;
+        border-radius: 2rem;
+        overflow: hidden;
+        box-shadow: .5rem 1.5rem 2rem hsl(var(--Dark-gray-blue), .2);
+    }
+}
+
+.results {
+    color: var(--Pale-blue);
+    text-align: center;
+    padding: 2.5rem;
+    background: var(--gradient-primary);
+    border-radius: 0 0 1rem 1rem;
+}
+
+@media (min-width: 600px){
+    .results{
+        border-radius: 2rem;
+    }
+
+}
+.result-score {
+    display: grid;
+    place-content: center;
+    width: 12rem;
+    margin-inline: auto;
+    background: var(--gradient-transparent);
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+}
+.result-score span{
+    display: block;
+    font-size: var(--fs-900);
+    font-weight: var(--fw-black);
+    line-height: 1;
+    color: hsl(var(--white));
+}
+
+.rank_title {
+    color: hsl(var(--white), 1);
+    font-size: var(--fs-700);
+    font-weight: var(--fw-bold);
+}
+
+p {
+    color: hsl(var(--white), .5);
+    font-size: var(--fs-400);
+    font-weight: var(--fw-regular);
+}
+    
+.summary {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    background-color: hsl(var(--white), .1);
+
+}
+.summary-title{
+    font-weight: var(--fw-bold);
+}
+
+.summary-item-score {
+    font-size: var(--fs-400);
+    font-weight: var(--fw-bold);
+}
+
+.summary-score-of-total {
+    color: hsl(var(--Dark-gray-blue), .5);
+    font-size: var(--fs-400);
+    font-weight: var(--fw-bold);
+}
+.summary-item {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+        
+}
+
+.item-clr-one {
+    color: hsl(var(--light-red));
+}
+.item-clr-two {
+    color: hsl(var(--orange-yellow));
+}
+.item-clr-three {
+    color: hsl(var(--green-teal));
+}
+.item-clr-four {
+    color: hsl(var(--cobalt-blue));
+}
+
+.item-one {
+    background-color: hsl(var(--light-red), .1)
+}
+
+.item-two {
+    background-color: hsl(var(--orange-yellow), .1)
+}
+
+.item-three {
+    background-color: hsl(var(--green-teal), .07)
+}
+
+.item-four {
+    background-color: hsl(var(--light-lavender), .2);
+}
+.item {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.button {
+    color: hsl(var(--white), .9);
+    font-weight: var(--fw-bold);
+    background: hsl(224, 30%, 27%);
+    line-height: 1;
+    padding: 1rem 2rem;
+    border: 0;
+    border-radius: 100vw;
+    cursor: pointer;
+}
+
+.button:hover,
+.button:focus-visible {
+    background: var(--gradient-primary);
+}
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center;
+    padding-top: 1rem;
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%);
+}
