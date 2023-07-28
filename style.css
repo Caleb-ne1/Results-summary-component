@@ -74,6 +74,7 @@ img,svg {
 
 .title {
     font-weight: var(--fw-bold);
+    color: hsl(var(--white), .8);
 }
 
 .result_summary {
